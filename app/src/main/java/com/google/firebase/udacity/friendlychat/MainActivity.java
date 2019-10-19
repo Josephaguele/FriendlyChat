@@ -176,6 +176,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Signed in", Toast.LENGTH_SHORT).show();
             } else if( resultCode == RESULT_CANCELED){
                 Toast.makeText(this, "Sign in canceled", Toast.LENGTH_SHORT).show();
+                finish();
             }
         }
     }
@@ -259,6 +260,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.sign_out_menu:
                 // sign out
                 AuthUI.getInstance().signOut(this);
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
